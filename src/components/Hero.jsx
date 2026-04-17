@@ -24,31 +24,28 @@ const Hero = () => {
           height: '260px',
           borderRadius: '50%',
           overflow: 'hidden',
-          padding: '8px',
-          background: 'linear-gradient(135deg, var(--accent), var(--accent-secondary))',
-          boxShadow: '0 0 50px var(--accent-glow)'
+          padding: '6px',
+          background: 'linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%)',
+          boxShadow: '0 0 40px rgba(220, 39, 67, 0.3)'
         }}>
           <div style={{
             width: '100%',
             height: '100%',
             borderRadius: '50%',
             background: '#0a0a0a',
+            padding: '4px',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
             overflow: 'hidden'
           }}>
-            {/* Olimjon's Photo Space */}
+            {/* Olimjon's Photo */}
             <div style={{
               width: '100%',
               height: '100%',
-              background: 'url("/assets/Me.jpg") center/cover no-repeat',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              color: 'var(--text-secondary)'
+              borderRadius: '50%',
+              background: 'url("/assets/Me.png") center/cover no-repeat',
             }}>
-              {!window.location.host.includes('localhost') && 'Me.jpg'}
             </div>
           </div>
         </div>
