@@ -1,6 +1,29 @@
-import React from 'react';
+import React, { useState, useRef } from 'react';
 
 const Hero = () => {
+  const [tilt, setTilt] = useState({ x: 0, y: 0 });
+  const containerRef = useRef(null);
+
+  const handleMouseMove = (e) => {
+    if (!containerRef.current) return;
+    
+    const rect = containerRef.current.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
+    
+    const rotateX = ((y - centerY) / centerY) * -15; // Max 15 deg tilt
+    const rotateY = ((x - centerX) / centerX) * 15;
+    
+    setTilt({ x: rotateX, y: rotateY });
+  };
+
+  const handleMouseLeave = () => {
+    setTilt({ x: 0, y: 0 });
+  };
+
   return (
     <section id="home" className="container" style={{
       minHeight: '85vh',
@@ -18,34 +41,45 @@ const Hero = () => {
       
       <div className="fade-in" style={{
         position: 'relative',
-        marginBottom: '2rem'
+        marginBottom: '2rem',
+        perspective: '1000px'
       }}>
-        <div className="float" style={{
-          width: '220px',
-          height: '220px',
-          borderRadius: '50%',
-          overflow: 'hidden',
-          padding: '5px',
-          background: 'linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%)',
-          boxShadow: '0 0 30px rgba(220, 39, 67, 0.2)'
-        }}>
+        <div 
+          ref={containerRef}
+          onMouseMove={handleMouseMove}
+          onMouseLeave={handleMouseLeave}
+          className="float" 
+          style={{
+            width: '240px',
+            height: '240px',
+            borderRadius: '50%',
+            overflow: 'hidden',
+            padding: '6px',
+            background: 'linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%)',
+            boxShadow: `0 20px 50px rgba(0,0,0,0.3), 0 0 20px ${tilt.x !== 0 ? 'var(--accent-glow)' : 'transparent'}`,
+            transform: `rotateX(${tilt.x}deg) rotateY(${tilt.y}deg) scale(${tilt.x !== 0 ? 1.05 : 1})`,
+            transition: 'transform 0.1s ease-out, box-shadow 0.3s ease',
+            cursor: 'pointer'
+          }}
+        >
           <div style={{
             width: '100%',
             height: '100%',
             borderRadius: '50%',
             background: '#0a0a0a',
-            padding: '3px',
+            padding: '4px',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
             overflow: 'hidden'
           }}>
-            {/* Olimjon's Photo */}
+            {/* Olimjon's New Photo */}
             <div style={{
               width: '100%',
               height: '100%',
               borderRadius: '50%',
-              background: 'url("/assets/Me.png") center/cover no-repeat',
+              background: 'url("/img/Screenshot%202026-04-17%20103457.png") center/cover no-repeat',
+              // Smooth idle rotation or zoom could happen here if needed
             }}>
             </div>
           </div>
@@ -64,7 +98,8 @@ const Hero = () => {
           display: 'flex',
           alignItems: 'center',
           gap: '5px',
-          border: '2px solid var(--bg-dark)'
+          border: '2px solid var(--bg-dark)',
+          zIndex: 10
         }}>
           <span style={{ width: '6px', height: '6px', background: '#fff', borderRadius: '50%' }}></span>
           Online
