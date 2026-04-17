@@ -38,7 +38,7 @@ const About = () => {
               Mening maqsadim - nafaqat chiroyli ko'rinishga ega, balki foydalanuvchilar uchun qulay va 
               ishonchli raqamli yechimlar yaratishdir.
             </p>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))', gap: '1.5rem' }}>
               <div className="glass" style={{ padding: '1.5rem', textAlign: 'center', background: 'rgba(255,255,255,0.03)' }}>
                 <div style={{ fontSize: '2rem', fontWeight: 'bold', color: 'var(--accent)' }}>9+</div>
                 <div style={{ fontSize: '0.9rem', color: 'var(--text-secondary)' }}>Oylik Tajriba</div>

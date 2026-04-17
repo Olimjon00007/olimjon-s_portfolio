@@ -75,8 +75,8 @@ const Projects = () => {
               }}>
                 <span style={{ color: p.color, fontSize: '1.5rem', fontWeight: 'bold' }}>{i + 1}</span>
               </div>
-              <h3 style={{ fontSize: '1.8rem', marginBottom: '1rem' }}>{p.title}</h3>
-              <p style={{ color: 'var(--text-secondary)', marginBottom: '1.5rem', minHeight: '80px' }}>{p.desc}</p>
+              <h3 style={{ fontSize: '1.8rem', marginBottom: '1.2rem', lineHeight: '1.4' }}>{p.title}</h3>
+              <p style={{ color: 'var(--text-secondary)', marginBottom: '1.8rem', minHeight: '90px', lineHeight: '1.6' }}>{p.desc}</p>
               
               <div style={{ display: 'flex', gap: '0.6rem', marginBottom: '2.5rem', flexWrap: 'wrap' }}>
                 {p.tech.map((t, ti) => (

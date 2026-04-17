@@ -47,7 +47,12 @@ const Navbar = () => {
         OLIMJON<span style={{ color: 'var(--text-primary)' }}>.DEV</span>
       </div>
 
-      <ul style={{ display: 'flex', gap: '2.5rem' }}>
+      <ul style={{ 
+        display: 'flex', 
+        gap: 'clamp(1rem, 3vw, 2.5rem)',
+        flexWrap: 'wrap',
+        justifyContent: 'center'
+      }}>
         {navLinks.map((link, i) => (
           <li key={i}>
             <a href={link.href} style={{ 

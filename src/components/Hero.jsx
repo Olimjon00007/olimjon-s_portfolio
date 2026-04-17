@@ -10,7 +10,7 @@ const Hero = () => {
       alignItems: 'center',
       textAlign: 'center',
       position: 'relative',
-      paddingTop: '100px'
+      paddingTop: '160px'
     }}>
       <div className="blob" style={{ top: '-10%', left: '-10%', background: 'var(--accent)' }}></div>
       <div className="blob" style={{ bottom: '10%', right: '-10%', background: 'var(--accent-secondary)' }}></div>
@@ -74,7 +74,7 @@ const Hero = () => {
         <h1 style={{ 
           fontSize: 'clamp(3rem, 8vw, 4.5rem)', 
           marginBottom: '1.5rem', 
-          lineHeight: '1.1',
+          lineHeight: '1.3',
           fontWeight: '700'
         }}>
           Salom, men <span style={{ 
