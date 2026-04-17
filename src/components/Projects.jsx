@@ -26,24 +26,24 @@ const Projects = () => {
   ];
 
   return (
-    <section id="projects" className="container">
-      <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
-        <h2 style={{ fontSize: '3rem', marginBottom: '1rem' }}>
+    <section id="projects" className="container" style={{ paddingBottom: '3rem' }}>
+      <div style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
+        <h2 style={{ fontSize: '2.2rem', marginBottom: '0.8rem' }}>
           Mening <span style={{ color: 'var(--accent)' }}>Loyihalarim</span>
         </h2>
-        <p style={{ color: 'var(--text-secondary)', maxWidth: '600px', margin: '0 auto' }}>
+        <p style={{ color: 'var(--text-secondary)', maxWidth: '600px', margin: '0 auto', fontSize: '1rem' }}>
           Har bir loyiha yuqori sifat va mukammal dizayn bilan yaratilgan.
         </p>
       </div>
 
       <div style={{
         display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))',
-        gap: '2.5rem'
+        gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+        gap: '1.5rem'
       }}>
         {projects.map((p, i) => (
           <div key={i} className="glass" style={{ 
-            padding: '2.5rem', 
+            padding: '2rem', 
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'space-between',
@@ -63,20 +63,20 @@ const Projects = () => {
 
             <div>
               <div style={{
-                width: '50px',
-                height: '50px',
-                borderRadius: '12px',
+                width: '45px',
+                height: '45px',
+                borderRadius: '10px',
                 background: `rgba(${p.color === 'var(--accent)' ? '14, 165, 233' : '245, 158, 11'}, 0.1)`,
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                marginBottom: '1.5rem',
+                marginBottom: '1.2rem',
                 border: `1px solid ${p.color}`
               }}>
-                <span style={{ color: p.color, fontSize: '1.5rem', fontWeight: 'bold' }}>{i + 1}</span>
+                <span style={{ color: p.color, fontSize: '1.2rem', fontWeight: 'bold' }}>{i + 1}</span>
               </div>
-              <h3 style={{ fontSize: '1.8rem', marginBottom: '1.2rem', lineHeight: '1.4' }}>{p.title}</h3>
-              <p style={{ color: 'var(--text-secondary)', marginBottom: '1.8rem', minHeight: '90px', lineHeight: '1.6' }}>{p.desc}</p>
+              <h3 style={{ fontSize: '1.5rem', marginBottom: '1rem', lineHeight: '1.4' }}>{p.title}</h3>
+              <p style={{ color: 'var(--text-secondary)', marginBottom: '1.2rem', minHeight: '60px', lineHeight: '1.6', fontSize: '0.95rem' }}>{p.desc}</p>
               
               <div style={{ display: 'flex', gap: '0.6rem', marginBottom: '2.5rem', flexWrap: 'wrap' }}>
                 {p.tech.map((t, ti) => (

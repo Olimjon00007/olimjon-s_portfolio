@@ -9,7 +9,7 @@ const About = () => {
 
   return (
     <section id="about" className="container">
-      <div className="glass" style={{ padding: '4rem 3rem', position: 'relative', overflow: 'hidden' }}>
+      <div className="glass" style={{ padding: '3rem 2rem', position: 'relative', overflow: 'hidden' }}>
         <div style={{
           position: 'absolute',
           top: '-50px',
@@ -24,14 +24,14 @@ const About = () => {
         <div style={{ 
           display: 'grid', 
           gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', 
-          gap: '4rem',
+          gap: '3rem',
           alignItems: 'center'
         }}>
           <div>
-            <h2 style={{ fontSize: '2.8rem', marginBottom: '1.5rem', lineHeight: '1.2' }}>
+            <h2 style={{ fontSize: '2.2rem', marginBottom: '1.2rem', lineHeight: '1.2' }}>
               Men <span style={{ color: 'var(--accent)' }}>haqimda</span>
             </h2>
-            <p style={{ color: 'var(--text-secondary)', fontSize: '1.1rem', marginBottom: '2rem', lineHeight: '1.8' }}>
+            <p style={{ color: 'var(--text-secondary)', fontSize: '1rem', marginBottom: '1.5rem', lineHeight: '1.7' }}>
               Men Olimjon To'xtasinov, 18 yoshli g'ayratli va maqsadli Web Developer. 
               UzCoders jamoasining faol a'zosi sifatida men premium SaaS platformalar yaratishda ishtirok etaman.
               9 oylik professional tajribam davomida men turli xil murakkablikdagi loyihalarni amalga oshirdim. 
