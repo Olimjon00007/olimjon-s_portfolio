@@ -10,7 +10,8 @@ const Hero = () => {
       alignItems: 'center',
       textAlign: 'center',
       position: 'relative',
-      paddingTop: '160px'
+      paddingTop: '160px',
+      paddingBottom: '80px'
     }}>
       <div className="blob" style={{ top: '-10%', left: '-10%', background: 'var(--accent)' }}></div>
       <div className="blob" style={{ bottom: '10%', right: '-10%', background: 'var(--accent-secondary)' }}></div>

@@ -19,23 +19,27 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="glass" style={{
+    <nav style={{
       position: 'fixed',
       top: scrolled ? '0' : '1.5rem',
       left: '50%',
       transform: 'translateX(-50%)',
       width: scrolled ? '100%' : '90%',
       maxWidth: scrolled ? '100%' : '1100px',
-      padding: scrolled ? '1rem 3rem' : '1.2rem 2.5rem',
+      padding: scrolled ? '0.8rem 3rem' : '1.2rem 2.5rem',
       display: 'flex',
       justifyContent: 'space-between',
       alignItems: 'center',
       zIndex: 1000,
       borderRadius: scrolled ? '0' : '24px',
       transition: 'all 0.4s cubic-bezier(0.16, 1, 0.3, 1)',
+      background: scrolled ? 'var(--bg-glass-solid)' : 'var(--bg-glass)',
+      backdropFilter: scrolled ? 'blur(24px)' : 'blur(16px)',
+      borderBottom: scrolled ? '1px solid var(--border-glass)' : '1px solid transparent',
       borderTop: scrolled ? 'none' : '1px solid var(--border-glass)',
       borderLeft: scrolled ? 'none' : '1px solid var(--border-glass)',
       borderRight: scrolled ? 'none' : '1px solid var(--border-glass)',
+      boxShadow: scrolled ? '0 10px 30px rgba(0,0,0,0.3)' : 'none'
     }}>
       <div style={{ 
         fontSize: '1.6rem', 
