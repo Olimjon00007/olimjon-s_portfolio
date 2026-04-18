@@ -55,7 +55,7 @@ const Projects = () => {
         transition={{ duration: 0.8 }}
         style={{ textAlign: 'center', marginBottom: '3.5rem' }}
       >
-        <h2 style={{ fontSize: '2.2rem', marginBottom: '1rem' }}>
+        <h2 style={{ marginBottom: '1rem' }}>
           Mening <span style={{ color: 'var(--accent)' }}>Loyihalarim</span>
         </h2>
       </motion.div>
@@ -88,7 +88,7 @@ const Projects = () => {
           style={{ padding: '3rem 0' }}
         >
           {projects.map((p, i) => (
-            <SwiperSlide key={i} style={{ width: '320px', height: 'auto' }}>
+            <SwiperSlide key={i} className="project-swiper-slide" style={{ height: 'auto' }}>
               <motion.div 
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
@@ -128,9 +128,8 @@ const Projects = () => {
                   <h3 style={{ fontSize: '1.3rem', marginBottom: '0.8rem', color: 'var(--text-primary)' }}>
                     {p.title}
                   </h3>
-                  <p style={{
+                  <p className="text-fluid" style={{
                     color: 'var(--text-secondary)',
-                    fontSize: '0.85rem',
                     lineHeight: '1.5',
                     marginBottom: '1.2rem',
                     minHeight: '4rem'

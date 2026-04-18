@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -26,7 +27,7 @@ const Navbar = () => {
       transform: 'translateX(-50%)',
       width: scrolled ? '100%' : '90%',
       maxWidth: scrolled ? '100%' : '1100px',
-      padding: scrolled ? '0.8rem 3rem' : '1.2rem 2.5rem',
+      padding: scrolled ? '0.8rem 1.5rem' : '1.2rem 2rem',
       display: 'flex',
       justifyContent: 'space-between',
       alignItems: 'center',
@@ -42,7 +43,7 @@ const Navbar = () => {
       boxShadow: scrolled ? '0 10px 30px rgba(0,0,0,0.3)' : 'none'
     }}>
       <div style={{ 
-        fontSize: '1.6rem', 
+        fontSize: 'clamp(1.2rem, 4vw, 1.6rem)', 
         fontWeight: '800', 
         color: 'var(--accent)',
         letterSpacing: '-0.5px',
@@ -51,23 +52,21 @@ const Navbar = () => {
         OLIMJON<span style={{ color: 'var(--text-primary)' }}>.DEV</span>
       </div>
 
-      <ul style={{ 
-        display: 'flex', 
-        gap: 'clamp(1rem, 3vw, 2.5rem)',
-        flexWrap: 'wrap',
-        justifyContent: 'center'
-      }}>
+      <ul className={`nav-menu ${isMenuOpen ? 'active' : ''}`}>
         {navLinks.map((link, i) => (
           <li key={i}>
-            <a href={link.href} style={{ 
-              fontSize: '0.95rem', 
-              fontWeight: '500', 
-              color: 'var(--text-secondary)',
-              position: 'relative',
-              padding: '5px 0'
-            }}
-            onMouseOver={(e) => e.target.style.color = 'var(--text-primary)'}
-            onMouseOut={(e) => e.target.style.color = 'var(--text-secondary)'}
+            <a 
+              href={link.href} 
+              onClick={() => setIsMenuOpen(false)}
+              style={{ 
+                fontSize: '1rem', 
+                fontWeight: '500', 
+                color: 'var(--text-secondary)',
+                position: 'relative',
+                padding: '10px 0'
+              }}
+              onMouseOver={(e) => e.target.style.color = 'var(--text-primary)'}
+              onMouseOut={(e) => e.target.style.color = 'var(--text-secondary)'}
             >
               {link.name}
             </a>
@@ -76,9 +75,21 @@ const Navbar = () => {
       </ul>
 
       <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-        <a href="#contact" className="btn-primary" style={{ padding: '0.6rem 1.5rem', fontSize: '0.9rem' }}>
+        <a href="#contact" className="btn-primary" style={{ 
+          padding: '0.6rem 1.2rem', 
+          fontSize: '0.85rem',
+          display: isMenuOpen ? 'none' : 'flex'
+        }}>
           Hamkorlik
         </a>
+        
+        <button 
+          className="mobile-menu-toggle"
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          aria-label="Toggle menu"
+        >
+          {isMenuOpen ? '✕' : '☰'}
+        </button>
       </div>
     </nav>
   );
