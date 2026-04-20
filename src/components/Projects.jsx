@@ -106,7 +106,7 @@ const Projects = () => {
                 {/* Project Image */}
                 <div style={{
                   width: '100%',
-                  height: '180px',
+                  height: '185px',
                   backgroundImage: `url(${p.image})`,
                   backgroundSize: 'cover',
                   backgroundPosition: 'center',

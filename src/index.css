@@ -330,15 +330,21 @@ li {
   }
 }
 
+/* Project slide sizing */
+.project-swiper-slide {
+  width: 480px !important;
+  max-width: 90vw;
+}
+
 /* Projects Swiper Responsive */
 @media (max-width: 768px) {
   .projects-swiper {
     padding: 2rem 0 !important;
   }
   
-  .swiper-slide {
+  .project-swiper-slide {
     width: 85% !important;
-    max-width: 340px;
+    max-width: 320px;
   }
 }
 
